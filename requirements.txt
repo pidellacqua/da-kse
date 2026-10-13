@@ -1,0 +1,30 @@
+# ==============================================================================
+# DA-KSE: Application Stack & Dependencies
+# Aligned with experimental specifications for Edge Gateways & Workstations
+# ==============================================================================
+
+# Core Scientific Computing & Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Tabular NIDS Machine Learning Classifier (Section 4.1 & Table 2)
+xgboost>=1.7.0
+scikit-learn>=1.2.0
+
+# Dense Embeddings & Semantic Similarity (Table 11: all-MiniLM-L6-v2)
+sentence-transformers>=2.2.0
+torch>=2.0.0
+
+# SLM Runtime Engine (Section 4.5 & Table 3: llama.cpp bindings v0.3.4)
+# Note: For CUDA hardware acceleration on NVIDIA Jetson or GPU workstations,
+# install with: CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python==0.3.4
+# On Raspberry Pi 5 (ARM Neon CPU), standard pip install builds with CPU Neon extensions.
+llama-cpp-python>=0.3.0
+
+# Hardware Telemetry Monitoring (Jetson INA3221 telemetry)
+# Optional: install on NVIDIA Jetson Orin Nano for physical jtop integration
+# jetson-stats>=4.2.0
+
+# CLI and Table Formatting Utilities
+tabulate>=0.9.0
+rich>=13.0.0
